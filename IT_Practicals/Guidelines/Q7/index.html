@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Information Display</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #petContainer {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .petCard {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pet Information Display</h1>
+
+    <div id="petContainer"></div>
+
+    <script>
+        // Use AJAX to load data from pets.json
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const pets = JSON.parse(xhr.responseText);
+                displayPets(pets);
+            }
+        };
+        xhr.open('GET', 'pets.json', true);
+        xhr.send();
+
+        // Function to display pet information in a presentable way
+        function displayPets(pets) {
+            const petContainer = document.getElementById('petContainer');
+
+            pets.forEach(pet => {
+                const petCard = document.createElement('div');
+                petCard.className = 'petCard';
+
+                const nameHeader = document.createElement('h2');
+                nameHeader.textContent = pet.name;
+
+                const ageParagraph = document.createElement('p');
+                ageParagraph.textContent = `Age: ${pet.age}`;
+
+                const weightParagraph = document.createElement('p');
+                weightParagraph.textContent = `Weight: ${pet.weight} kg`;
+
+                const typeParagraph = document.createElement('p');
+                typeParagraph.textContent = `Type: ${pet.type}`;
+
+                const likesParagraph = document.createElement('p');
+                likesParagraph.textContent = `Likes: ${pet.likes}`;
+
+                petCard.appendChild(nameHeader);
+                petCard.appendChild(ageParagraph);
+                petCard.appendChild(weightParagraph);
+                petCard.appendChild(typeParagraph);
+                petCard.appendChild(likesParagraph);
+
+                petContainer.appendChild(petCard);
+            });
+        }
+    </script>
+
+</body>
+</html>

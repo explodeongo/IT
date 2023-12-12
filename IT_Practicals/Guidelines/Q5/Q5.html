@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 5</title>
+    <link href="Q5.css" rel="stylesheet" />
+</head>
+<body>
+    <p id="paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Fusce bibendum, dolor eu ullamcorper ultrices, ex leo mattis dui, ac volutpat 
+        nisi ligula sit amet libero. Etiam nec lectus vitae eros finibus fermentum. Cras 
+        euismod at lectus vitae consectetur. Vivamus leo tellus, eleifend vel malesuada vitae, 
+        tincidunt eu nulla. Phasellus tristique et nulla vel consequat. Ut vitae ipsum et 
+        velit egestas imperdiet. Vestibulum quis gravida orci, ut pretium tellus. Ut at 
+        risus et ligula posuere egestas. Ut ultricies viverra tempus. Ut dapibus urna 
+        pellentesque porttitor iaculis. Donec consequat urna nec urna vulputate, id 
+        gravida leo elementum. Aliquam erat volutpat.
+    </p>
+    <div id="grid-container">
+        <div class="grid-row">
+            <button onclick="changeColor('red')">Red</button>
+            <button onclick="changeColor('green')">Green</button>
+            <button onclick="changeColor('blue')">Blue</button>
+        </div>
+        <div class="grid-row">
+            <button onclick="changeFontSize(10)">10</button>
+            <button onclick="changeFontSize(20)">20</button>
+            <button onclick="changeFontSize(30)">30</button>
+        </div>
+        <div class="grid-row">
+            <button onclick="changeFont('Garamond')">Garamond</button>
+            <button onclick="changeFont('Papyrus')">Papyrus</button>
+            <button onclick="changeFont('Calibri')">Calibri</button>
+        </div>
+    </div>
+    <script src="Q5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Demo</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <div id="parent">
+        <div id="child">
+            <p>This is a paragraph inside the child div.</p>
+        </div>
+    </div>
+
+    <button id="findBtn">Find Descendant</button>
+    <button id="childrenBtn">Get Children</button>
+
+    <script>
+        // Event handler for the "Find Descendant" button
+        $("#findBtn").click(function() {
+            // Find all descendant paragraphs inside the #child element
+            var descendantParagraphs = $("#child").find("p");
+            descendantParagraphs.addClass("highlight");
+        });
+
+        // Event handler for the "Get Children" button
+        $("#childrenBtn").click(function() {
+            // Get all immediate children of the #parent element
+            var immediateChildren = $("#parent").children();
+            immediateChildren.addClass("highlight");
+        });
+    </script>
+
+</body>
+</html>

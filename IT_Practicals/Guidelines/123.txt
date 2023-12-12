@@ -1,0 +1,213 @@
+I don't have a real-time network connection, so I can't provide you with my current IP address or subnet mask. However, I can guide you on how to find this information on your own system using the ipconfig command on Windows or the equivalent ifconfig command on Linux or macOS.
+
+For Windows:
+Press Win + R to open the Run dialog.
+Type cmd and press Enter to open the Command Prompt.
+In the Command Prompt, type the following command and press Enter:
+bash
+Copy code
+ipconfig
+Look for the "IPv4 Address" and "Subnet Mask" under your active network connection.
+For Linux or macOS:
+Open a terminal.
+Type the following command and press Enter:
+bash
+Copy code
+ifconfig
+or
+
+bash
+Copy code
+ip addr
+Look for the "inet" address and "netmask" under your active network connection.
+Once you have the IP address and subnet mask, you can calculate the network address and the range of IP addresses available for devices on your network.
+
+Network Address:
+The network address is obtained by performing a bitwise AND operation between the IP address and the subnet mask. For example:
+
+plaintext
+Copy code
+Network Address = IP Address AND Subnet Mask
+Maximum Number of Systems:
+The maximum number of systems possible on your network is determined by the size of the subnet. You can calculate the number of available IP addresses using the formula:
+
+plaintext
+Copy code
+2^(32 - subnet mask length)
+IP Address Range:
+The IP address range can be determined based on the network address and the maximum number of systems. For example, if your network address is 192.168.1.0 and you have 256 available addresses, the range would be from 192.168.1.1 to 192.168.1.254.
+
+If you provide me with your specific IP address and subnet mask, I can guide you through the calculations
+
+
+
+###########################
+2
+I don't have the capability to execute commands or interact with real-time systems, so I can't demonstrate the actual commands. However, I can guide you on how to perform these tasks.
+
+### Check if you are connected to other systems using ping:
+
+1. Open a command prompt or terminal window.
+2. Use the `ping` command followed by the IP address or hostname of the system you want to check:
+
+```bash
+ping <IP_address_or_hostname>
+```
+
+If the system is reachable and responsive, you should see a series of responses. If not, it might indicate a network issue.
+
+### Find the route to connect to that system using tracert (Windows) or traceroute (Linux/macOS):
+
+#### For Windows (tracert):
+
+1. Open a command prompt.
+2. Use the `tracert` command followed by the IP address or hostname of the target system:
+
+```bash
+tracert <IP_address_or_hostname>
+```
+
+This command will show you the route your packets take to reach the destination, indicating each hop along the way.
+
+#### For Linux/macOS (traceroute):
+
+1. Open a terminal.
+2. Use the `traceroute` command followed by the IP address or hostname:
+
+```bash
+traceroute <IP_address_or_hostname>
+```
+
+This command performs a similar function as `tracert` on Windows.
+
+### List all processes using ports for TCP protocol:
+
+#### For Windows:
+
+1. Open a command prompt.
+2. Use the `netstat` command with the `-an` option to display all active network connections and listening ports:
+
+```bash
+netstat -an | find "TCP"
+```
+
+This command will show you a list of all TCP connections and listening ports.
+
+#### For Linux/macOS:
+
+1. Open a terminal.
+2. Use the `netstat` command with the `-t` option to display active TCP connections:
+
+```bash
+netstat -t
+```
+
+Alternatively, you can use the `lsof` command to list processes and the ports they are using:
+
+```bash
+sudo lsof -iTCP -sTCP:LISTEN
+```
+
+These commands will provide information about processes using TCP ports on your system.
+
+Remember to use appropriate permissions or elevate your privileges if needed, especially for commands like `lsof` that may require superuser (root) access.
+
+
+
+#####################################
+3 
+
+
+Certainly! Below is a simple example of an HTML page that includes information about me, my course, hobbies, address, and plans. I've also added some basic CSS styling to make it visually appealing. Feel free to modify the content and styles to suit your preferences.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About Me</h1>
+    </header>
+
+    <section>
+        <h2>Personal Information</h2>
+        <p>Hello! I'm [Your Name], a student interested in [Your Course] at [Your University/Institution]. Here's a bit about me:</p>
+
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Programming</li>
+            <li>Reading</li>
+            <li>Outdoor activities</li>
+        </ul>
+
+        <h2>Contact Information</h2>
+        <p>Address: [Your Address]</p>
+
+        <h2>Future Plans</h2>
+        <p>I plan to [Your Plans and Aspirations]. Exciting times ahead!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 [Your Name]. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+```
+
+Replace the placeholder text (e.g., `[Your Name]`, `[Your Course]`, etc.) with your actual information. You can further customize the styles and layout based on your preferences.

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Extraction Demo</title>
+</head>
+<body>
+
+    <div id="dateElements">
+        <p id="year"></p>
+        <p id="month"></p>
+        <p id="day"></p>
+        <p id="hours"></p>
+        <p id="minutes"></p>
+        <p id="seconds"></p>
+        <p id="milliseconds"></p>
+    </div>
+
+    <script>
+        // Create a new Date object
+        var currentDate = new Date();
+
+        // Extract various elements
+        var year = currentDate.getFullYear();
+        var month = currentDate.getMonth() + 1; // Months are zero-indexed, so add 1
+        var day = currentDate.getDate();
+        var hours = currentDate.getHours();
+        var minutes = currentDate.getMinutes();
+        var seconds = currentDate.getSeconds();
+        var milliseconds = currentDate.getMilliseconds();
+
+        // Display the extracted elements in the HTML document
+        document.getElementById("year").textContent = "Year: " + year;
+        document.getElementById("month").textContent = "Month: " + month;
+        document.getElementById("day").textContent = "Day: " + day;
+        document.getElementById("hours").textContent = "Hours: " + hours;
+        document.getElementById("minutes").textContent = "Minutes: " + minutes;
+        document.getElementById("seconds").textContent = "Seconds: " + seconds;
+        document.getElementById("milliseconds").textContent = "Milliseconds: " + milliseconds;
+
+    </script>
+
+</body>
+</html>
